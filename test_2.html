@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Créatif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .animate-slide-in {
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .diagonal-box {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .hover-rotate {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-rotate:hover {
+            transform: rotate(-5deg) scale(1.02);
+        }
+
+        .text-stroke {
+            -webkit-text-stroke: 1px #FF3366;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Menu latéral fixe -->
+    <nav class="fixed left-0 top-0 h-screen w-20 bg-zinc-900 flex flex-col items-center justify-center space-y-8 z-50">
+        <a href="#home" class="text-zinc-500 hover:text-white transition-colors duration-300">
+            <i class="fas fa-home text-2xl"></i>
+        </a>
+        <a href="#about" class="text-zinc-500 hover:text-white transition-colors duration-300">
+            <i class="fas fa-user text-2xl"></i>
+        </a>
+        <a href="#projects" class="text-zinc-500 hover:text-white transition-colors duration-300">
+            <i class="fas fa-code text-2xl"></i>
+        </a>
+        <a href="#contact" class="text-zinc-500 hover:text-white transition-colors duration-300">
+            <i class="fas fa-envelope text-2xl"></i>
+        </a>
+    </nav>
+
+    <!-- Section Hero -->
+    <section id="home" class="min-h-screen pl-20 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-screen bg-gradient-to-bl from-pink-500/20 via-purple-500/20 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-8 py-32 flex items-center">
+            <div class="w-full">
+                <h1 class="text-8xl font-bold mb-6">
+                    <span class="block text-stroke">Créative</span>
+                    <span class="block text-pink-500">Développeuse</span>
+                    <span class="block">Full Stack</span>
+                </h1>
+                <p class="text-xl text-zinc-400 max-w-xl mb-12">
+                    Transformant des idées en expériences numériques exceptionnelles
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#contact" class="bg-pink-500 hover:bg-pink-600 px-8 py-4 rounded-full transition-all duration-300">
+                        Me contacter
+                    </a>
+                    <a href="#projects" class="border border-white/20 hover:border-pink-500 px-8 py-4 rounded-full transition-all duration-300">
+                        Voir mes projets
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="skills" class="pl-20 py-32 bg-zinc-900 diagonal-box">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-6xl font-bold mb-20">Compétences</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="group hover-rotate bg-zinc-800 p-8 rounded-3xl">
+                    <div class="text-pink-500 text-4xl mb-6">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Front-end</h3>
+                    <ul class="space-y-3 text-zinc-400">
+                        <li class="flex items-center space-x-2">
+                            <span class="text-pink-500">▹</span>
+                            <span>React.js</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-pink-500">▹</span>
+                            <span>Vue.js</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-pink-500">▹</span>
+                            <span>Tailwind CSS</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Répéter pour Back-end et autres -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects" class="pl-20 py-32">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-6xl font-bold mb-20">Projets</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div class="group relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-80 transition-opacity duration-500 rounded-3xl"></div>
+                    <img src="project1.jpg" alt="Projet 1" class="w-full h-[400px] object-cover rounded-3xl">
+                    <div class="absolute inset-0 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <h3 class="text-2xl font-bold mb-2">Nom du Projet</h3>
+                        <p class="mb-4">Description du projet avec les technologies utilisées</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-white text-black px-6 py-2 rounded-full">Voir le site</a>
+                            <a href="#" class="border border-white px-6 py-2 rounded-full">Code source</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Répéter pour d'autres projets -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="pl-20 py-32 bg-zinc-900">
+        <div class="max-w-3xl mx-auto px-8">
+            <h2 class="text-6xl font-bold mb-20">Contact</h2>
+            <form class="space-y-8">
+                <div class="relative">
+                    <input type="text" required
+                        class="w-full bg-transparent border-b-2 border-zinc-700 focus:border-pink-500 px-4 py-4 outline-none transition-colors duration-300">
+                    <label class="absolute left-4 top-4 text-zinc-500 transition-all duration-300">Nom</label>
+                </div>
+                <div class="relative">
+                    <input type="email" required
+                        class="w-full bg-transparent border-b-2 border-zinc-700 focus:border-pink-500 px-4 py-4 outline-none transition-colors duration-300">
+                    <label class="absolute left-4 top-4 text-zinc-500 transition-all duration-300">Email</label>
+                </div>
+                <div class="relative">
+                    <textarea required rows="5"
+                        class="w-full bg-transparent border-b-2 border-zinc-700 focus:border-pink-500 px-4 py-4 outline-none transition-colors duration-300"></textarea>
+                    <label class="absolute left-4 top-4 text-zinc-500 transition-all duration-300">Message</label>
+                </div>
+                <button type="submit"
+                    class="w-full bg-gradient-to-r from-pink-500 to-purple-500 py-4 rounded-full font-medium hover:opacity-90 transition-opacity duration-300">
+                    Envoyer
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pl-20 py-8 bg-zinc-900 text-zinc-500">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center">
+            <p>&copy; 2024 - Tous droits réservés</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-pink-500 transition-colors duration-300">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="#" class="hover:text-pink-500 transition-colors duration-300">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="#" class="hover:text-pink-500 transition-colors duration-300">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Développeuse Full Stack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .text-stroke {
+            -webkit-text-stroke: 1px #64ffda;
+            color: transparent;
+        }
+
+        .diagonal-box {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-[#0a192f] text-gray-300">
+    <!-- Menu latéral -->
+    <nav class="fixed left-0 top-0 h-screen w-20 bg-[#112240] flex flex-col items-center justify-center space-y-8 z-50">
+        <a href="#home" class="text-gray-500 hover:text-[#64ffda] transition-colors duration-300">
+            <i class="fas fa-home text-2xl"></i>
+        </a>
+        <a href="#about" class="text-gray-500 hover:text-[#64ffda] transition-colors duration-300">
+            <i class="fas fa-user text-2xl"></i>
+        </a>
+        <a href="#skills" class="text-gray-500 hover:text-[#64ffda] transition-colors duration-300">
+            <i class="fas fa-code text-2xl"></i>
+        </a>
+        <a href="#education" class="text-gray-500 hover:text-[#64ffda] transition-colors duration-300">
+            <i class="fas fa-graduation-cap text-2xl"></i>
+        </a>
+        <a href="#projects" class="text-gray-500 hover:text-[#64ffda] transition-colors duration-300">
+            <i class="fas fa-laptop-code text-2xl"></i>
+        </a>
+        <a href="#contact" class="text-gray-500 hover:text-[#64ffda] transition-colors duration-300">
+            <i class="fas fa-envelope text-2xl"></i>
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen pl-20 relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-1/2 h-screen bg-gradient-to-bl from-[#64ffda]/10 via-[#0a192f]/50 to-transparent">
+        </div>
+        <div class="max-w-7xl mx-auto px-8 py-32 flex items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-7xl font-bold mb-6">
+                        <span class="block text-stroke">Créative</span>
+                        <span class="block text-[#64ffda]">Développeuse</span>
+                        <span class="block">Full Stack</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 mb-8">Passionnée par la création d'expériences web innovantes et
+                        performantes</p>
+                    <div class="flex space-x-6">
+                        <a href="#contact"
+                            class="bg-[#64ffda] text-[#0a192f] px-8 py-4 rounded-full font-medium hover:bg-[#64ffda]/90 transition-all duration-300">
+                            Me contacter
+                        </a>
+                        <a href="#projects"
+                            class="border border-[#64ffda] text-[#64ffda] px-8 py-4 rounded-full hover:bg-[#64ffda]/10 transition-all duration-300">
+                            Voir mes projets
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <!-- Remplacer le src par votre image -->
+                    <img src="votre-photo.jpg" alt="Portrait"
+                        class="rounded-full w-96 h-96 object-cover border-4 border-[#64ffda]/20">
+                    <div class="absolute -inset-4 border-2 border-[#64ffda]/20 rounded-full animate-pulse"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="about" class="pl-20 py-32 bg-[#112240]">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-20">
+                <span class="text-[#64ffda]">À propos</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-gray-400">
+                    <p class="text-lg leading-relaxed">
+                        Bonjour ! Je suis [Votre Nom], développeuse Full Stack passionnée par la création d'applications
+                        web innovantes et performantes. Avec plus de [X] années d'expérience dans le développement web,
+                        je combine créativité et expertise technique pour donner vie à des projets ambitieux.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Ma passion pour le code a débuté [votre histoire personnelle]. Aujourd'hui, je me spécialise
+                        dans le développement Full Stack, avec une expertise particulière en [vos domaines de
+                        prédilection].
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        En dehors du code, je m'intéresse à [vos autres centres d'intérêt/activités]. Cette diversité
+                        d'intérêts nourrit ma créativité et ma capacité à aborder les défis techniques sous différents
+                        angles.
+                    </p>
+                    <div class="pt-6">
+                        <h3 class="text-xl font-bold text-[#64ffda] mb-4">Technologies favorites :</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-[#64ffda]">▹</span>
+                                <span>JavaScript (ES6+)</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-[#64ffda]">▹</span>
+                                <span>React.js</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-[#64ffda]">▹</span>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-[#64ffda]">▹</span>
+                                <span>TypeScript</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-[#64ffda]">▹</span>
+                                <span>Python</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-[#64ffda]">▹</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <!-- Image principale -->
+                    <div class="relative z-10 rounded-lg overflow-hidden">
+                        <img src="about-image.jpg" alt="Photo professionnelle"
+                            class="w-full rounded-lg grayscale hover:grayscale-0 transition-all duration-300">
+                        <div
+                            class="absolute inset-0 bg-[#64ffda]/20 group-hover:opacity-0 transition-opacity duration-300">
+                        </div>
+                    </div>
+                    <!-- Bordure décorative -->
+                    <div
+                        class="absolute -right-4 -bottom-4 w-full h-full border-2 border-[#64ffda] rounded-lg transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="skills" class="pl-20 py-32 bg-[#112240] diagonal-box">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-20">
+                <span class="text-[#64ffda]">Compétences</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Front-end -->
+                <div
+                    class="group bg-[#0a192f] p-8 rounded-3xl hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-[#64ffda] text-4xl mb-6">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Front-end</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center space-x-2">
+                            <span class="text-[#64ffda]">▹</span>
+                            <span>React.js / Next.js</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-[#64ffda]">▹</span>
+                            <span>Vue.js / Nuxt.js</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-[#64ffda]">▹</span>
+                            <span>Tailwind CSS</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-[#64ffda]">▹</span>
+                            <span>TypeScript</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Back-end -->
+                <div
+                    class="group bg-[#0a192f] p-8 rounded-3xl hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-[#64ffda] text-4xl mb-6">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Back-end</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center space-x-2">
+                            <span class="text-[#64ffda]">▹</span>
+                            <span>Node.js / Express</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-[#64ffda]">▹</span>
+                            <span>Python / Django</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-[#64ffda]">▹</span>
+                            <span>PHP / Laravel</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-[#64ffda]">▹</span>
+                            <span>API REST / GraphQL</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Base de données & Outils -->
+                <div
+                    class="group bg-[#0a192f] p-8 rounded-3xl hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-[#64ffda] text-4xl mb-6">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Base de données & Outils</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center space-x-2">
+                            <span class="text-[#64ffda]">▹</span>
+                            <span>MongoDB</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-[#64ffda]">▹</span>
+                            <span>PostgreSQL</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-[#64ffda]">▹</span>
+                            <span>Docker</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="text-[#64ffda]">▹</span>
+                            <span>Git / GitHub</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section Parcours d'études -->
+    <section id="education" class="pl-20 py-32">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-20">
+                <span class="text-[#64ffda]">Parcours</span>
+            </h2>
+            <div class="space-y-12">
+                <!-- Timeline item -->
+                <div class="flex group">
+                    <div class="w-24 text-right pr-8">
+                        <span class="text-[#64ffda]">2023</span>
+                    </div>
+                    <div
+                        class="flex-1 relative pb-16 border-l-2 border-gray-700 pl-8 group-hover:border-[#64ffda] transition-colors duration-300">
+                        <div
+                            class="absolute w-4 h-4 bg-[#0a192f] border-2 border-[#64ffda] rounded-full -left-[9px] group-hover:scale-125 transition-transform duration-300">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Master en Développement Web</h3>
+                        <p class="text-gray-400 mb-2">École Supérieure du Digital</p>
+                        <p class="text-gray-500">Spécialisation en développement Full Stack et architecture cloud</p>
+                    </div>
+                </div>
+
+                <!-- Timeline item -->
+                <div class="flex group">
+                    <div class="w-24 text-right pr-8">
+                        <span class="text-[#64ffda]">2021</span>
+                    </div>
+                    <div
+                        class="flex-1 relative pb-16 border-l-2 border-gray-700 pl-8 group-hover:border-[#64ffda] transition-colors duration-300">
+                        <div
+                            class="absolute w-4 h-4 bg-[#0a192f] border-2 border-[#64ffda] rounded-full -left-[9px] group-hover:scale-125 transition-transform duration-300">
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Licence Informatique</h3>
+                        <p class="text-gray-400 mb-2">Université de Paris</p>
+                        <p class="text-gray-500">Formation en algorithmique, programmation orientée objet et bases de
+                            données</p>
+                    </div>
+                </div>
+
+                <!-- Ajoutez d'autres formations selon votre parcours -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects" class="pl-20 py-32 bg-[#112240]">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-20">
+                <span class="text-[#64ffda]">Projets</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Projet 1 -->
+                <div class="group relative overflow-hidden rounded-3xl">
+                    <img src="projet1.jpg" alt="Projet 1" class="w-full h-[300px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] to-transparent opacity-90"></div>
+                    <div
+                        class="absolute inset-0 p-8 flex flex-col justify-end transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-[#64ffda] mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-300 mb-4">Application web e-commerce complète avec panier, paiement et
+                            gestion des commandes</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-[#0a192f]/50 rounded-full text-sm">React.js</span>
+                            <span class="px-3 py-1 bg-[#0a192f]/50 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-[#0a192f]/50 rounded-full text-sm">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-[#64ffda] hover:text-white transition-colors duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-[#64ffda] hover:text-white transition-colors duration-300">
+                                <i class="fas fa-external-link-alt text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="group relative overflow-hidden rounded-3xl">
+                    <img src="projet2.jpg" alt="Projet 2" class="w-full h-[300px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a192f] to-transparent opacity-90"></div>
+                    <div
+                        class="absolute inset-0 p-8 flex flex-col justify-end transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-[#64ffda] mb-2">Task Management App</h3>
+                        <p class="text-gray-300 mb-4">Application de gestion de tâches avec fonctionnalités
+                            collaboratives</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-[#0a192f]/50 rounded-full text-sm">Vue.js</span>
+                            <span class="px-3 py-1 bg-[#0a192f]/50 rounded-full text-sm">Laravel</span>
+                            <span class="px-3 py-1 bg-[#0a192f]/50 rounded-full text-sm">PostgreSQL</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-[#64ffda] hover:text-white transition-colors duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-[#64ffda] hover:text-white transition-colors duration-300">
+                                <i class="fas fa-external-link-alt text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ajoutez d'autres projets selon votre portfolio -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="pl-20 py-32">
+        <div class="max-w-3xl mx-auto px-8">
+            <h2 class="text-5xl font-bold mb-20 text-center">
+                <span class="text-[#64ffda]">Contact</span>
+            </h2>
+            <form class="space-y-8">
+                <div class="relative">
+                    <input type="text" required
+                        class="w-full bg-transparent border-2 border-gray-700 focus:border-[#64ffda] rounded-lg px-4 py-3 outline-none transition-colors duration-300"
+                        placeholder="Nom">
+                </div>
+                <div class="relative">
+                    <input type="email" required
+                        class="w-full bg-transparent border-2 border-gray-700 focus:border-[#64ffda] rounded-lg px-4 py-3 outline-none transition-colors duration-300"
+                        placeholder="Email">
+                </div>
+                <div class="relative">
+                    <textarea required rows="5"
+                        class="w-full bg-transparent border-2 border-gray-700 focus:border-[#64ffda] rounded-lg px-4 py-3 outline-none transition-colors duration-300"
+                        placeholder="Message"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-[#64ffda] text-[#0a192f] py-4 rounded-lg font-medium hover:bg-[#64ffda]/90 transition-all duration-300">
+                    Envoyer
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pl-20 py-8 bg-[#112240] text-gray-400">
+        <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center">
+            <p>&copy; 2024 - Développé avec passion</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-[#64ffda] transition-colors duration-300">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="#" class="hover:text-[#64ffda] transition-colors duration-300">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="#" class="hover:text-[#64ffda] transition-colors duration-300">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
