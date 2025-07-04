@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio VS Code</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="vs-code-container">
+        <!-- Barre latérale (activité) -->
+        <div class="activity-bar">
+            <div class="activity-icon active" data-section="about">
+                <span>👤</span>
+                <span class="tooltip">About Me</span>
+            </div>
+            <div class="activity-icon" data-section="education">
+                <span>🎓</span>
+                <span class="tooltip">Education</span>
+            </div>
+            <div class="activity-icon" data-section="experience">
+                <span>💼</span>
+                <span class="tooltip">Experience</span>
+            </div>
+            <div class="activity-icon" data-section="skills">
+                <span>🛠️</span>
+                <span class="tooltip">Compétences</span>
+            </div>
+            <div class="activity-icon" data-section="contact">
+                <span>✉️</span>
+                <span class="tooltip">Contact</span>
+            </div>
+        </div>
+
+        <!-- Barre latérale (explorateur) -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <span>MON PORTFOLIO</span>
+            </div>
+            <div class="sidebar-content">
+                <div class="file-tree">
+                    <div class="file-item active" data-section="about">
+                        <span>📄 about-me.txt</span>
+                    </div>
+                    <div class="file-item" data-section="education">
+                        <span>📁 Education</span>
+                    </div>
+                    <div class="file-item" data-section="experience">
+                        <span>📁 Experience</span>
+                    </div>
+                    <div class="file-item" data-section="skills">
+                        <span>📁 Compétences</span>
+                    </div>
+                    <div class="file-item" data-section="contact">
+                        <span>📄 contact-me.txt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zone de contenu principale -->
+        <div class="main-content">
+            <div class="tab-bar">
+                <div class="tab active" data-section="about">about-me.txt</div>
+                <div class="tab" data-section="education">Education</div>
+                <div class="tab" data-section="experience">Experience</div>
+                <div class="tab" data-section="skills">Compétences</div>
+                <div class="tab" data-section="contact">contact-me.txt</div>
+            </div>
+
+            <div class="editor-area">
+                <!-- Section About Me -->
+                <div class="section-content active" id="about-section">
+                    <div class="line-number">1</div><div class="code-line"><span class="code-comment">// À propos de moi</span></div>
+                    <div class="line-number">2</div><div class="code-line"><span class="code-keyword">const</span> <span class="code-variable">moi</span> = {</div>
+                    <div class="line-number">3</div><div class="code-line">  <span class="code-property">nom</span>: <span class="code-string">"Votre Nom"</span>,</div>
+                    <div class="line-number">4</div><div class="code-line">  <span class="code-property">titre</span>: <span class="code-string">"Votre Profession"</span>,</div>
+                    <div class="line-number">5</div><div class="code-line">  <span class="code-property">localisation</span>: <span class="code-string">"Ville, Pays"</span>,</div>
+                    <div class="line-number">6</div><div class="code-line">  <span class="code-property">passions</span>: [<span class="code-string">"développement"</span>, <span class="code-string">"design"</span>, <span class="code-string">"autres centres d'intérêt"</span>],</div>
+                    <div class="line-number">7</div><div class="code-line">  <span class="code-property">bio</span>: <span class="code-string">"Une brève description de vous, vos objectifs et ce qui vous motive."</span></div>
+                    <div class="line-number">8</div><div class="code-line">};</div>
+                </div>
+
+                <!-- Section Education -->
+                <div class="section-content" id="education-section">
+                    <div class="line-number">1</div><div class="code-line"><span class="code-comment">// Mon parcours académique</span></div>
+                    <div class="line-number">2</div><div class="code-line"><span class="code-keyword">class</span> <span class="code-class">Education</span> {</div>
+                    <div class="line-number">3</div><div class="code-line">  <span class="code-function">constructor</span>() {</div>
+                    <div class="line-number">4</div><div class="code-line">    <span class="code-keyword">this</span>.<span class="code-property">diplomes</span> = [</div>
+                    <div class="line-number">5</div><div class="code-line">      {</div>
+                    <div class="line-number">6</div><div class="code-line">        <span class="code-property">annee</span>: <span class="code-string">"20XX-20XX"</span>,</div>
+                    <div class="line-number">7</div><div class="code-line">        <span class="code-property">diplome</span>: <span class="code-string">"Nom du diplôme"</span>,</div>
+                    <div class="line-number">8</div><div class="code-line">        <span class="code-property">institution</span>: <span class="code-string">"Nom de l'école/université"</span>,</div>
+                    <div class="line-number">9</div><div class="code-line">        <span class="code-property">description</span>: <span class="code-string">"Description des études"</span></div>
+                    <div class="line-number">10</div><div class="code-line">      }</div>
+                    <div class="line-number">11</div><div class="code-line">    ];</div>
+                    <div class="line-number">12</div><div class="code-line">  }</div>
+                    <div class="line-number">13</div><div class="code-line">}</div>
+                </div>
+
+                <!-- Section Experience -->
+                <div class="section-content" id="experience-section">
+                    <div class="line-number">1</div><div class="code-line"><span class="code-comment">// Mon expérience professionnelle</span></div>
+                    <div class="line-number">2</div><div class="code-line"><span class="code-keyword">interface</span> <span class="code-interface">Experience</span> {</div>
+                    <div class="line-number">3</div><div class="code-line">  <span class="code-property">poste</span>: <span class="code-type">string</span>;</div>
+                    <div class="line-number">4</div><div class="code-line">  <span class="code-property">entreprise</span>: <span class="code-type">string</span>;</div>
+                    <div class="line-number">5</div><div class="code-line">  <span class="code-property">periode</span>: <span class="code-type">string</span>;</div>
+                    <div class="line-number">6</div><div class="code-line">  <span class="code-property">responsabilites</span>: <span class="code-type">string</span>[];</div>
+                    <div class="line-number">7</div><div class="code-line">}</div>
+                    <div class="line-number">8</div><div class="code-line"></div>
+                    <div class="line-number">9</div><div class="code-line"><span class="code-keyword">const</span> <span class="code-variable">experiences</span>: <span class="code-type">Experience</span>[] = [</div>
+                    <div class="line-number">10</div><div class="code-line">  {</div>
+                    <div class="line-number">11</div><div class="code-line">    <span class="code-property">poste</span>: <span class="code-string">"Votre poste"</span>,</div>
+                    <div class="line-number">12</div><div class="code-line">    <span class="code-property">entreprise</span>: <span class="code-string">"Nom de l'entreprise"</span>,</div>
+                    <div class="line-number">13</div><div class="code-line">    <span class="code-property">periode</span>: <span class="code-string">"Mois Année - Mois Année"</span>,</div>
+                    <div class="line-number">14</div><div class="code-line">    <span class="code-property">responsabilites</span>: [</div>
+                    <div class="line-number">15</div><div class="code-line">      <span class="code-string">"Responsabilité 1"</span>,</div>
+                    <div class="line-number">16</div><div class="code-line">      <span class="code-string">"Responsabilité 2"</span></div>
+                    <div class="line-number">17</div><div class="code-line">    ]</div>
+                    <div class="line-number">18</div><div class="code-line">  }</div>
+                    <div class="line-number">19</div><div class="code-line">];</div>
+                </div>
+
+                <!-- Section Compétences -->
+                <div class="section-content" id="skills-section">
+                    <div class="line-number">1</div><div class="code-line"><span class="code-comment">// Mes compétences techniques</span></div>
+                    <div class="line-number">2</div><div class="code-line"><span class="code-keyword">export const</span> <span class="code-variable">competences</span> = {</div>
+                    <div class="line-number">3</div><div class="code-line">  <span class="code-property">langages</span>: [<span class="code-string">"JavaScript"</span>, <span class="code-string">"HTML/CSS"</span>, <span class="code-string">"Python"</span>],</div>
+                    <div class="line-number">4</div><div class="code-line">  <span class="code-property">frameworks</span>: [<span class="code-string">"React"</span>, <span class="code-string">"Node.js"</span>, <span class="code-string">"Vue"</span>],</div>
+                    <div class="line-number">5</div><div class="code-line">  <span class="code-property">outils</span>: [<span class="code-string">"Git"</span>, <span class="code-string">"VS Code"</span>, <span class="code-string">"Figma"</span>],</div>
+                    <div class="line-number">6</div><div class="code-line">  <span class="code-property">langues</span>: [</div>
+                    <div class="line-number">7</div><div class="code-line">    { <span class="code-property">langue</span>: <span class="code-string">"Français"</span>, <span class="code-property">niveau</span>: <span class="code-string">"Natif"</span> },</div>
+                    <div class="line-number">8</div><div class="code-line">    { <span class="code-property">langue</span>: <span class="code-string">"Anglais"</span>, <span class="code-property">niveau</span>: <span class="code-string">"Courant"</span> }</div>
+                    <div class="line-number">9</div><div class="code-line">  ]</div>
+                    <div class="line-number">10</div><div class="code-line">};</div>
+                </div>
+
+                <!-- Section Contact -->
+                <div class="section-content" id="contact-section">
+                    <div class="line-number">1</div><div class="code-line"><span class="code-comment">// Comment me contacter</span></div>
+                    <div class="line-number">2</div><div class="code-line"><span class="code-keyword">function</span> <span class="code-function">contactMe</span>() {</div>
+                    <div class="line-number">3</div><div class="code-line">  <span class="code-keyword">const</span> <span class="code-variable">contacts</span> = {</div>
+                    <div class="line-number">4</div><div class="code-line">    <span class="code-property">email</span>: <span class="code-string">"votre@email.com"</span>,</div>
+                    <div class="line-number">5</div><div class="code-line">    <span class="code-property">telephone</span>: <span class="code-string">"+XX X XX XX XX XX"</span>,</div>
+                    <div class="line-number">6</div><div class="code-line">    <span class="code-property">linkedin</span>: <span class="code-string">"linkedin.com/in/votreprofil"</span>,</div>
+                    <div class="line-number">7</div><div class="code-line">    <span class="code-property">github</span>: <span class="code-string">"github.com/votrepseudo"</span>,</div>
+                    <div class="line-number">8</div><div class="code-line">    <span class="code-property">twitter</span>: <span class="code-string">"@votrehandle"</span></div>
+                    <div class="line-number">9</div><div class="code-line">  };</div>
+                    <div class="line-number">10</div><div class="code-line"></div>
+                    <div class="line-number">11</div><div class="code-line">  <span class="code-keyword">return</span> (</div>
+                    <div class="line-number">12</div><div class="code-line">    <span class="code-string">`N'hésitez pas à me contacter pour des opportunités ou collaborations!`</span></div>
+                    <div class="line-number">13</div><div class="code-line">  );</div>
+                    <div class="line-number">14</div><div class="code-line">}</div>
+                </div>
+            </div>
+
+            <!-- Barre d'état -->
+            <div class="status-bar">
+                <div class="status-bar-left">
+                    <span>main</span>
+                    <span>UTF-8</span>
+                </div>
+                <div class="status-bar-right">
+                    <span>Ln 1, Col 1</span>
+                    <span>100%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
