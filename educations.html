@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio - Formations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/theme.css">
+</head>
+
+<body class="bg-[#010101] text-gray-300 font-mono overflow-hidden">
+
+  <!-- Barre de titre VS Code -->
+  <div class="bg-[#111111] border-b border-[#3e3e3e] px-4 py-2 flex items-center justify-between">
+    <div class="flex items-center space-x-4">
+      <img src="https://code.visualstudio.com/assets/images/code-stable.png" alt="VS Code" class="h-[16px] mr-2">
+      <div class="flex space-x-1">
+        <div class="p-1 rounded-md text-xs hover:bg-[#444444]">File</div>
+        <div class="p-1 rounded-md text-xs hover:bg-[#444444]">Edit</div>
+        <!-- <div class="p-1 rounded-md text-xs hover:bg-[#444444]">Selection</div> -->
+        <div class="p-1 rounded-md text-xs hover:bg-[#444444]">Terminal</div>
+        <div class="p-1 rounded-md text-xs hover:bg-[#444444] ">•••</div>
+        <!-- <div class="p-1 rounded-md text-xs hover:bg-[#444444]">View</div> -->
+        <!-- <div class="p-1 rounded-md text-xs hover:bg-[#444444]">Go</div> -->
+        <!-- <div class="p-1 rounded-md text-xs hover:bg-[#444444]">Run</div> -->
+        <!-- <div class="p-1 rounded-md text-xs hover:bg-[#444444]">Help</div> -->
+      </div>
+
+    </div>
+
+    <div class="flex items-center space-x-4">
+      <div class=" text-center bg-[#212121] rounded-md border border-[#333333] text-xs py-1 w-96">
+        🔎 Mon_Portfolio
+      </div>
+    </div>
+    <div class="flex items-center space-x-4">
+      <button id="theme-toggle" class="text-gray-400 hover:text-white">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="hover:bg-[#404040] px-4">─</button>
+      <button class="hover:bg-[#404040] px-4">□</button>
+      <button class="hover:bg-[#e81123] px-4">×</button>
+    </div>
+  </div>
+
+  <div class="flex h-screen">
+    <!-- Barre latérale (Activity Bar) -->
+    <div class="bg-[#111111] border-r border-[#3e3e3e]  w-16 flex flex-col items-center py-4 space-y-6">
+      <button class="activity-btn active" data-view="explorer"><i class="fas fa-folder"></i></button>
+      <button class="activity-btn" data-view="search"><i class="fas fa-search"></i></button>
+      <button class="activity-btn" data-view="git"><i class="fas fa-code-branch"></i></button>
+      <button class="activity-btn" data-view="debug"><i class="fas fa-bug"></i></button>
+      <button class="activity-btn" data-view="extensions"><i class="fas fa-puzzle-piece"></i></button>
+    </div>
+
+    <!-- Explorateur de fichiers -->
+    <div id="explorer-panel" class="bg-[#111111] w-64 border-r border-[#3e3e3e] overflow-auto">
+      <div class="p-4 border-b border-[#3e3e3e]">
+        <h3 class="text-sm font-semibold">EXPLORATEUR</h3>
+      </div>
+
+      <div class="p-2 text-sm">
+        <div class="folder">
+          <div class="folder-header flex items-center cursor-pointer">
+            <i class="fas fa-chevron-down mr-1 text-xs"></i>
+            <i class="fas fa-folder text-[#dcb67a] mr-2"></i>
+            <span>Mon_Portfolio</span>
+          </div>
+
+          <div class="folder-content ml-4 mt-1">
+            <!-- Dossier scripts -->
+            <div class="folder">
+              <div class="folder-header flex items-center cursor-pointer">
+                <i class="fas fa-chevron-down mr-1 text-xs"></i>
+                <i class="fas fa-folder text-[#dcb67a] mr-2"></i>
+                <span>scripts</span>
+              </div>
+              <div class="folder-content ml-4 mt-1">
+                <div class="file hover:text-[#00c6ff]" data-file="scripts/script.js">
+                  <i class="fab fa-js text-yellow-400 mr-2"></i>script.js
+                </div>
+              </div>
+            </div>
+
+            <!-- Dossier styles -->
+            <div class="folder mt-2">
+              <div class="folder-header flex items-center cursor-pointer">
+                <i class="fas fa-chevron-down mr-1 text-xs"></i>
+                <i class="fas fa-folder text-[#dcb67a] mr-2"></i>
+                <span>styles</span>
+              </div>
+              <div class="folder-content ml-4 mt-1">
+                <div class="file hover:text-[#00c6ff]" data-file="styles/style.css">
+                  <i class="fab fa-css3-alt text-blue-400 mr-2"></i>style.css
+                </div>
+                <div class="file hover:text-[#00c6ff]" data-file="styles/theme.css">
+                  <i class="fab fa-css3-alt text-blue-400 mr-2"></i>theme.css
+                </div>
+              </div>
+            </div>
+
+            <!-- Fichiers principaux -->
+            <div class="mt-2 space-y-1">
+              <a href="index.html">
+                <div class="file hover:text-[#00c6ff]" data-file="README.md"><i
+                    class="fas fa-file-alt text-gray-400 mr-2"></i>README.md</div>
+              </a>
+              <a href="about.html">
+                <div class="file hover:text-[#00c6ff]" data-file="about.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>about.html</div>
+              </a>
+              <a href="certificats.html">
+                <div class="file hover:text-[#00c6ff]" data-file="certificats.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>certificats.html</div>
+              </a>
+              <a href="educations.html">
+                <div class="file hover:text-[#00c6ff] bg-[#333333]" data-file="formations.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>formations.html</div>
+              </a>
+              <a href="projects.html">
+                <div class="file hover:text-[#00c6ff]" data-file="projets.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>projets.html</div>
+              </a>
+              <a href="skills.html">
+                <div class="file hover:text-[#00c6ff]" data-file="skills.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>skills.html</div>
+              </a>
+              <a href="experiences.html">
+                <div class="file hover:text-[#00c6ff]" data-file="experiences.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>experiences.html</div>
+              </a>
+              <a href="contact.html">
+                <div class="file hover:text-[#00c6ff]" data-file="contact.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>contact.html</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Zone d’édition -->
+    <div class="flex-1 flex flex-col">
+      <div class="bg-[#111111] border-b border-[#212121] flex items-center">
+        <div class="tab active px-4 py-2 flex items-center text-sm bg-[#212121]">
+          <i class="fab fa-html5 text-orange-400 mr-2"></i>
+          <span>formations.html</span>
+        </div>
+      </div>
+
+      <div id="editor-container" class="flex-1 overflow-auto p-6">
+        <section class="p-4">
+          <h2 class="text-2xl font-bold text-yellow-400 mb-6">🎓 Parcours</h2>
+
+
+          <div class="space-y-8">
+            <div class="timeline-item flex group">
+              <div class="w-24 text-right pr-8 hidden sm:block">
+                <span class="text-[#facc15]">2024 - 2026 (En cours)</span>
+              </div>
+              <div class="flex-1 relative pb-10 border-l-2 border-gray-700 pl-8 group-hover:border-[#facc15]">
+                <div
+                  class="timeline-dot absolute w-4 h-4 bg-[#0a192f] border-2 border-[#facc15] rounded-full -left-[9px]">
+                </div>
+                <span class="text-[#facc15] block sm:hidden mb-2">2024 - 2026</span>
+                <h3 class="text-2xl font-bold mb-2">Développement Web Full Stack & Intelligence Artificielle</h3>
+                <p class="text-gray-400">YouCode (UM6P)</p>
+                <p class="text-gray-300 text-sm mt-1">📍 Safi</p>
+
+              </div>
+            </div>
+
+            <div class="timeline-item flex group">
+              <div class="w-24 text-right pr-8 hidden sm:block">
+                <span class="text-[#facc15]">2020 - 2024</span>
+              </div>
+              <div class="flex-1 relative pb-10 border-l-2 border-gray-700 pl-8 group-hover:border-[#facc15]">
+                <div
+                  class="timeline-dot absolute w-4 h-4 bg-[#0a192f] border-2 border-[#facc15] rounded-full -left-[9px]">
+                </div>
+                <span class="text-[#facc15] block sm:hidden mb-2">2020 - 2024</span>
+                <h3 class="text-2xl font-bold mb-2">Licence en Sciences Mathématiques et Informatiques</h3>
+                <p class="text-gray-400">Université Moulay Ismail, Faculté des Sciences</p>
+                <p class="text-gray-300 text-sm mt-1">📍 Meknès</p>
+              </div>
+            </div>
+
+            <div class="timeline-item flex group">
+              <div class="w-24 text-right pr-8 hidden sm:block">
+                <span class="text-[#facc15]">2019 - 2020</span>
+              </div>
+              <div class="flex-1 relative pb-10 border-l-2 border-gray-700 pl-8 group-hover:border-[#facc15]">
+                <div
+                  class="timeline-dot absolute w-4 h-4 bg-[#0a192f] border-2 border-[#facc15] rounded-full -left-[9px]">
+                </div>
+                <span class="text-[#facc15] block sm:hidden mb-2">2019 - 2020</span>
+                <h3 class="text-2xl font-bold mb-2">Baccalauréat en Sciences Mathématiques - Option A</h3>
+                <p class="text-gray-400">Lycée Hassan II</p>
+                <p class="text-gray-300 text-sm mt-1">📍 Midelt</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </div>
+      <!-- Barre de statut -->
+      <div
+        class="fixed bottom-0 left-0 right-0 h-[22px] bg-[var(--status-bar-bg)] text-white text-xs px-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i class="bi bi-git"></i> main <span>•</span> Aucun problème détecté
+        </div>
+        <div class="flex items-center gap-3">
+          <span>UTF-8</span>
+          <span>LF</span>
+          <span>JavaScript</span>
+          <span>Port: 3000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/theme-toggle.js"></script>
+  <script src="scripts/script.js"></script>
+</body>
+
+</html>

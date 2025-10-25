@@ -1,0 +1,160 @@
+/* Styles personnalisés supplémentaires */
+@import url('vscode-theme.css');
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid #007acc;
+    white-space: nowrap;
+    animation: typewriter 2s steps(40, end);
+}
+
+/* Styles pour le contenu des fichiers */
+.file-content {
+    display: none;
+}
+
+.file-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Badges et tags */
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 6px;
+    margin-bottom: 4px;
+}
+
+.badge-primary {
+    background: #007acc;
+    color: white;
+}
+
+.badge-secondary {
+    background: #4ec9b0;
+    color: #1e1e1e;
+}
+
+.badge-success {
+    background: #6a9955;
+    color: white;
+}
+
+/* Cartes de projet */
+.project-card {
+    background: #252526;
+    border: 1px solid #3e3e3e;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: all 0.2s;
+}
+
+.project-card:hover {
+    border-color: #007acc;
+    transform: translateY(-2px);
+}
+
+/* Barres de compétences */
+.skill-bar {
+    background: #3e3e3e;
+    border-radius: 4px;
+    height: 8px;
+    margin: 8px 0;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #007acc, #4ec9b0);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .activity-bar {
+        width: 48px;
+    }
+    
+    .explorer-panel {
+        width: 200px;
+    }
+    
+    .tab {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Mode clair */
+.light-theme {
+    --vscode-background: #ffffff;
+    --vscode-foreground: #333333;
+    --vscode-selection: #add6ff;
+    --vscode-comment: #008000;
+    --vscode-keyword: #0000ff;
+    --vscode-string: #a31515;
+    --vscode-number: #098658;
+    --vscode-function: #795e26;
+    --vscode-variable: #001080;
+    --vscode-type: #267f99;
+    --vscode-activeTab: #ffffff;
+    --vscode-inactiveTab: #f3f3f3;
+}
+
+/* Transition fluide pour le changement de thème */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Loading states */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Tooltips */
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+}

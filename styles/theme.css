@@ -1,0 +1,29 @@
+:root {
+  --editor-bg: #1e1e1e;
+  --vscode-text: #cccccc;
+  --titlebar-bg: #3c3c3c;
+  --activity-bar-bg: #333333;
+  --sidebar-bg: #252526;
+  --status-bar-bg: #007acc;
+}
+
+[data-theme='light'] {
+  --editor-bg: #ffffff;
+  --vscode-text: #2d2d2d;
+  --titlebar-bg: #e5e5e5;
+  --activity-bar-bg: #f2f2f2;
+  --sidebar-bg: #f7f7f7;
+  --status-bar-bg: #007acc;
+}
+
+body {
+  transition: background 0.4s, color 0.4s;
+}
+
+.file-tree-item a {
+  color: inherit;
+  text-decoration: none;
+}
+.file-tree-item a:hover {
+  text-decoration: underline;
+}

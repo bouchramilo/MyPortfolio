@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me - Portfolio VS Code Style</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+  <!-- Custom colors -->
+  <style>
+    :root {
+      --editor-bg: #1e1e1e;
+      --sidebar-bg: #252526;
+      --activity-bar-bg: #333333;
+      --titlebar-bg: #2d2d2d;
+      --status-bar-bg: #007acc;
+      --vscode-text: #d4d4d4;
+      --accent: #00c6ff;
+      --accent-soft: rgba(0, 198, 255, 0.1);
+    }
+
+    .syntax-keyword {
+      color: #569cd6;
+    }
+
+    .syntax-variable {
+      color: #9cdcfe;
+    }
+
+    .syntax-string {
+      color: #ce9178;
+    }
+
+    .syntax-tag {
+      color: #4ec9b0;
+    }
+
+    .syntax-attr {
+      color: #9cdcfe;
+    }
+
+    .syntax-function {
+      color: #dcdcaa;
+    }
+
+    .fade-in {
+      animation: fadeIn 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[var(--editor-bg)] text-[var(--vscode-text)] font-mono overflow-hidden">
+  <!-- Barre de titre -->
+  <div
+    class="fixed top-0 left-0 right-0 h-[30px] bg-[var(--titlebar-bg)] flex items-center justify-between px-3 text-sm text-gray-300 z-50">
+    <div class="flex items-center space-x-2">
+      <img src="https://code.visualstudio.com/assets/images/code-stable.png" alt="VSCode" class="h-4" />
+      <span>Portfolio - Visual Studio Code</span>
+    </div>
+    <div class="flex space-x-1">
+      <button class="hover:bg-[#404040] px-3">─</button>
+      <button class="hover:bg-[#404040] px-3">□</button>
+      <button class="hover:bg-[#e81123] px-3">×</button>
+    </div>
+  </div>
+
+  <!-- Contenu principal -->
+  <div class="flex h-screen mt-[30px]">
+    <!-- Activity Bar -->
+    <div class="fixed left-0 top-[30px] bottom-0 w-[50px] bg-[var(--activity-bar-bg)] flex flex-col justify-between">
+      <div class="flex flex-col">
+        <button class="p-4 text-[#00c6ff]"><i class="bi bi-files"></i></button>
+        <button class="p-4 text-gray-400 hover:text-[#00c6ff]"><i class="bi bi-search"></i></button>
+        <button class="p-4 text-gray-400 hover:text-[#00c6ff]"><i class="bi bi-git"></i></button>
+        <button class="p-4 text-gray-400 hover:text-[#00c6ff]"><i class="bi bi-gear"></i></button>
+      </div>
+      <div class="flex flex-col">
+        <button class="p-4 text-gray-400 hover:text-[#00c6ff]"><i class="bi bi-person-circle"></i></button>
+      </div>
+    </div>
+
+    <!-- Sidebar (Explorer) -->
+    <div
+      class="fixed left-[50px] top-[30px] bottom-0 w-[250px] bg-[var(--sidebar-bg)] border-r border-[#3e3e3e] overflow-y-auto">
+      <div class="px-4 py-3 border-b border-[#3e3e3e] text-sm font-semibold">EXPLORER</div>
+      <div class="p-2 text-sm space-y-2">
+        <div class="font-semibold flex items-center gap-2">
+          <i class="bi bi-chevron-down text-xs"></i> <span>PORTFOLIO</span>
+        </div>
+        <div class="pl-6 space-y-1">
+          <a href="index.html" class="flex items-center gap-2 text-[#cbcb41] hover:text-[#00c6ff]">
+            <i class="bi bi-file-earmark-text"></i> README.md
+          </a>
+          <a href="about.html" class="flex items-center gap-2 text-[#e37933]">
+            <i class="bi bi-file-earmark-code"></i> About.html
+          </a>
+          <a href="skills.html" class="flex items-center gap-2 text-[#e37933] hover:text-[#00c6ff]">
+            <i class="bi bi-file-earmark-code"></i> Skills.html
+          </a>
+          <a href="educations.html" class="flex items-center gap-2 text-[#e37933] hover:text-[#00c6ff]">
+            <i class="bi bi-file-earmark-code"></i> Educations.html
+          </a>
+          <a href="experiences.html" class="flex items-center gap-2 text-[#e37933] hover:text-[#00c6ff]">
+            <i class="bi bi-file-earmark-code"></i> Experiences.html
+          </a>
+          <a href="projects.html" class="flex items-center gap-2 text-[#e37933] hover:text-[#00c6ff]">
+            <i class="bi bi-file-earmark-code"></i> Projects.html
+          </a>
+          <a href="certificats.html" class="flex items-center gap-2 text-[#e37933] hover:text-[#00c6ff]">
+            <i class="bi bi-file-earmark-code"></i> Certificats.html
+          </a>
+          <a href="contact.html" class="flex items-center gap-2 text-[#e37933] hover:text-[#00c6ff]">
+            <i class="bi bi-file-earmark-code"></i> Contact.html
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Zone d’édition principale -->
+    <div class="ml-[300px] flex-1 bg-[var(--editor-bg)] flex flex-col overflow-hidden">
+      <!-- Onglet -->
+      <div class="bg-[#252526] border-b border-[#1e1e1e] flex items-center text-sm px-4 py-2">
+        <i class="bi bi-file-earmark-code text-[#e37933] mr-2"></i>
+        <span>README.md</span>
+      </div>
+
+      <!-- Contenu -->
+      <div class="p-8 overflow-y-auto">
+        <!-- Section “About Me” -->
+        <div class="bg-[#2d2d2d] p-8 rounded-lg shadow-md fade-in">
+          <h1 class="text-3xl font-bold mb-4 text-[#00c6ff]">👩‍💻 Samar Miloudy</h1>
+          <p class="text-lg text-[#dcdcaa] mb-6">
+            Développeuse Full Stack & Intelligence Artificielle — passionnée par la création de solutions
+            intelligentes et élégantes alliant data science, IA et développement web moderne.
+          </p>
+
+          <div class="space-y-4">
+            <p>
+              🌍 <span class="text-[#ce9178]">Localisation :</span> Maroc
+            </p>
+            <p>
+              🧠 <span class="text-[#ce9178]">Compétences clés :</span> Python, React, Tailwind, FastAPI, TensorFlow
+            </p>
+            <p>
+              💬 <span class="text-[#ce9178]">Langages :</span> Français, Anglais, Arabe
+            </p>
+          </div>
+
+          <div class="mt-6 flex gap-4">
+            <a href="https://github.com" target="_blank"
+              class="px-5 py-2 rounded-lg bg-[#1e1e1e] border border-[#333] hover:border-[#00c6ff] flex items-center gap-2">
+              <i class="bi bi-github"></i> GitHub
+            </a>
+            <a href="https://linkedin.com" target="_blank"
+              class="px-5 py-2 rounded-lg bg-[#1e1e1e] border border-[#333] hover:border-[#00c6ff] flex items-center gap-2">
+              <i class="bi bi-linkedin"></i> LinkedIn
+            </a>
+            <a href="mailto:samar@example.com"
+              class="px-5 py-2 rounded-lg bg-[#1e1e1e] border border-[#333] hover:border-[#00c6ff] flex items-center gap-2">
+              <i class="bi bi-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barre de statut -->
+      <div
+        class="fixed bottom-0 left-0 right-0 h-[22px] bg-[var(--status-bar-bg)] text-white text-xs px-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i class="bi bi-git"></i> main <span>•</span> Aucun problème détecté
+        </div>
+        <div class="flex items-center gap-3">
+          <span>UTF-8</span>
+          <span>LF</span>
+          <span>JavaScript</span>
+          <span>Port: 3000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

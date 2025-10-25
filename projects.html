@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio - Formations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/theme.css">
+</head>
+<body class="bg-[#1e1e1e] text-gray-300 font-mono overflow-hidden">
+
+  <!-- Barre VS Code -->
+  <div class="bg-[#2d2d2d] border-b border-[#3e3e3e] px-4 py-2 flex items-center justify-between">
+    <div class="flex items-center space-x-4">
+      <div class="flex space-x-2">
+        <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+        <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+        <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+      </div>
+      <span class="text-sm">formations.html - Mon_Portfolio</span>
+    </div>
+    <div class="flex items-center space-x-4">
+      <button id="theme-toggle" class="text-gray-400 hover:text-white"><i class="fas fa-moon"></i></button>
+    </div>
+  </div>
+
+  <div class="flex h-screen">
+    <!-- Barre latérale -->
+    <div class="bg-[#333333] w-16 flex flex-col items-center py-4 space-y-6">
+      <button class="activity-btn active" data-view="explorer"><i class="fas fa-folder"></i></button>
+      <button class="activity-btn" data-view="search"><i class="fas fa-search"></i></button>
+      <button class="activity-btn" data-view="git"><i class="fas fa-code-branch"></i></button>
+      <button class="activity-btn" data-view="debug"><i class="fas fa-bug"></i></button>
+      <button class="activity-btn" data-view="extensions"><i class="fas fa-puzzle-piece"></i></button>
+    </div>
+
+    <!-- Explorateur de fichiers -->
+    <div id="explorer-panel" class="bg-[#252526] w-64 border-r border-[#3e3e3e] overflow-auto">
+      <div class="p-4 border-b border-[#3e3e3e]">
+        <h3 class="text-sm font-semibold">EXPLORATEUR</h3>
+      </div>
+      <div class="p-2 text-sm">
+        <div class="folder">
+          <div class="folder-header flex items-center cursor-pointer">
+            <i class="fas fa-chevron-down mr-1 text-xs"></i>
+            <i class="fas fa-folder text-[#dcb67a] mr-2"></i>
+            <span>Mon_Portfolio</span>
+          </div>
+          <div class="folder-content ml-4 mt-1">
+            <div class="mt-2 space-y-1">
+              <a href="index.html"><div class="file hover:text-[#00c6ff]"><i class="fas fa-file-alt text-gray-400 mr-2"></i>README.md</div></a>
+              <a href="about.html"><div class="file hover:text-[#00c6ff]"><i class="fab fa-html5 text-orange-400 mr-2"></i>about.html</div></a>
+              <a href="skills.html"><div class="file hover:text-[#00c6ff]"><i class="fab fa-html5 text-orange-400 mr-2"></i>skills.html</div></a>
+              <a href="projects.html"><div class="file hover:text-[#00c6ff]"><i class="fab fa-html5 text-orange-400 mr-2"></i>projects.html</div></a>
+              <a href="experiences.html"><div class="file hover:text-[#00c6ff]"><i class="fab fa-html5 text-orange-400 mr-2"></i>experiences.html</div></a>
+              <a href="educations.html"><div class="file hover:text-[#00c6ff] bg-[#333333]"><i class="fab fa-html5 text-orange-400 mr-2"></i>educations.html</div></a>
+              <a href="certificats.html"><div class="file hover:text-[#00c6ff]"><i class="fab fa-html5 text-orange-400 mr-2"></i>certificats.html</div></a>
+              <a href="contact.html"><div class="file hover:text-[#00c6ff]"><i class="fab fa-html5 text-orange-400 mr-2"></i>contact.html</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Éditeur -->
+    <div class="flex-1 flex flex-col">
+      <div class="bg-[#2d2d2d] border-b border-[#3e3e3e] flex items-center">
+        <div class="tab active px-4 py-2 flex items-center text-sm bg-[#333333]">
+          <i class="fas fa-file-alt text-gray-400 mr-2"></i>
+          <span>formations.html</span>
+        </div>
+      </div>
+
+      <div id="editor-container" class="flex-1 overflow-auto p-6">
+        <section>
+          <h2 class="text-xl font-semibold text-[#DCDCAA] mb-4">🎓 FORMATIONS</h2>
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-blue-700 font-semibold">Développement Web Full Stack & Intelligence Artificielle</h3>
+              <div class="flex justify-between text-xs">
+                <p>YouCode (UM6P), Safi</p>
+                <p>(En cours) 2024 - 2026</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-blue-700 font-semibold">Licence - Sciences Mathématiques et Informatiques</h3>
+              <div class="flex justify-between text-xs">
+                <p>Faculté des sciences Moulay Ismail, Meknès</p>
+                <p>2020 - 2024</p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-blue-700 font-semibold">Baccalauréat - Sciences Math Option A</h3>
+              <div class="flex justify-between text-xs">
+                <p>Lycée HASSAN II, Midelt</p>
+                <p>2019 - 2020</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/theme-toggle.js"></script>
+  <script src="scripts/script.js"></script>
+</body>
+</html>
