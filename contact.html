@@ -2,178 +2,364 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me - Portfolio VS Code Style</title>
-
-  <!-- Tailwind CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - VS Code Style</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
 
-  <!-- Custom colors -->
-  <style>
-    :root {
-      --editor-bg: #1e1e1e;
-      --sidebar-bg: #252526;
-      --activity-bar-bg: #333333;
-      --titlebar-bg: #2d2d2d;
-      --status-bar-bg: #007acc;
-      --vscode-text: #d4d4d4;
-      --accent: #00c6ff;
-      --accent-soft: rgba(0, 198, 255, 0.1);
-    }
-
-    .syntax-keyword {
-      color: #569cd6;
-    }
-
-    .syntax-variable {
-      color: #9cdcfe;
-    }
-
-    .syntax-string {
-      color: #ce9178;
-    }
-
-    .syntax-tag {
-      color: #4ec9b0;
-    }
-
-    .syntax-attr {
-      color: #9cdcfe;
-    }
-
-    .syntax-function {
-      color: #dcdcaa;
-    }
-
-    .fade-in {
-      animation: fadeIn 1.2s ease forwards;
-      opacity: 0;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/theme.css">
 </head>
 
-<body class="bg-[var(--editor-bg)] text-[var(--vscode-text)] font-mono overflow-hidden">
-  <!-- Barre de titre -->
-  <div
-    class="fixed top-0 left-0 right-0 h-[30px] bg-[var(--titlebar-bg)] flex items-center justify-between px-3 text-sm text-gray-300 z-50">
-    <div class="flex items-center space-x-2">
-      <img src="https://code.visualstudio.com/assets/images/code-stable.png" alt="VSCode" class="h-4" />
-      <span>Portfolio - Visual Studio Code</span>
+<body class="bg-[#010101] text-gray-300 font-mono overflow-hidden">
+
+  <!-- Barre de titre VS Code -->
+  <div class="bg-[#111111] border-b border-[#3e3e3e] px-4 py-2 flex items-center justify-between">
+    <div class="flex items-center space-x-4">
+      <img src="https://code.visualstudio.com/assets/images/code-stable.png" alt="VS Code" class="h-[16px] mr-2">
+      <div class="flex space-x-1">
+        <div class="p-1 rounded-md text-xs hover:bg-[#444444]">File</div>
+        <div class="p-1 rounded-md text-xs hover:bg-[#444444]">Edit</div>
+        <div class="p-1 rounded-md text-xs hover:bg-[#444444]">Terminal</div>
+        <div class="p-1 rounded-md text-xs hover:bg-[#444444] ">•••</div>
+      </div>
     </div>
-    <div class="flex space-x-1">
-      <button class="hover:bg-[#404040] px-3">─</button>
-      <button class="hover:bg-[#404040] px-3">□</button>
-      <button class="hover:bg-[#e81123] px-3">×</button>
+
+    <div class="flex items-center space-x-4">
+      <div class=" text-center bg-[#212121] rounded-md border border-[#333333] text-xs py-1 w-96">
+        🔎 Mon_Portfolio
+      </div>
+    </div>
+    <div class="flex items-center space-x-4">
+      <button id="theme-toggle" class="text-gray-400 hover:text-white">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="hover:bg-[#404040] px-4">─</button>
+      <button class="hover:bg-[#404040] px-4">□</button>
+      <button class="hover:bg-[#e81123] px-4">×</button>
     </div>
   </div>
 
-  <!-- Contenu principal -->
-  <div class="flex h-screen mt-[30px]">
-    <!-- Activity Bar -->
-    <div class="fixed left-0 top-[30px] bottom-0 w-[50px] bg-[var(--activity-bar-bg)] flex flex-col justify-between">
+  <div class="flex h-screen">
+    <!-- Barre latérale (Activity Bar) -->
+    <div class="bg-[#111111] border-r border-[#3e3e3e] gap-[300px] w-16 flex flex-col items-center py-4 space-y-6">
       <div class="flex flex-col">
-        <button class="p-4 text-[#00c6ff]"><i class="bi bi-files"></i></button>
-        <button class="p-4 text-gray-400 hover:text-[#00c6ff]"><i class="bi bi-search"></i></button>
-        <button class="p-4 text-gray-400 hover:text-[#00c6ff]"><i class="bi bi-git"></i></button>
-        <button class="p-4 text-gray-400 hover:text-[#00c6ff]"><i class="bi bi-gear"></i></button>
+        <button class="py-1 text-gray-400 hover:text-[#00c6ff] active" data-view="explorer"><i
+            class="fas fa-folder"></i></button>
+        <button class="py-1 text-gray-400 hover:text-[#00c6ff]" data-view="search"><i
+            class="fas fa-search"></i></button>
+        <button class="py-1 text-gray-400 hover:text-[#00c6ff]" data-view="git"><i
+            class="fas fa-code-branch"></i></button>
+        <button class="py-1 text-gray-400 hover:text-[#00c6ff]" data-view="debug"><i class="fas fa-bug"></i></button>
+        <button class="py-1 text-gray-400 hover:text-[#00c6ff]" data-view="extensions"><i
+            class="fas fa-puzzle-piece"></i></button>
+        <button class="py-1 text-gray-400 hover:text-[#00c6ff]" data-view="database"><i
+            class="fas fa-database"></i></button>
       </div>
+
       <div class="flex flex-col">
-        <button class="p-4 text-gray-400 hover:text-[#00c6ff]"><i class="bi bi-person-circle"></i></button>
+        <button class="py-1 text-gray-400 hover:text-[#00c6ff] active" data-view="explorer">
+          <i class="fas fa-user"></i>
+        </button>
+        <button class="py-1 text-gray-400 hover:text-[#00c6ff]"><i class="bi bi-gear"></i></button>
       </div>
     </div>
 
-    <!-- Sidebar (Explorer) -->
-    <div
-      class="fixed left-[50px] top-[30px] bottom-0 w-[250px] bg-[var(--sidebar-bg)] border-r border-[#3e3e3e] overflow-y-auto">
-      <div class="px-4 py-3 border-b border-[#3e3e3e] text-sm font-semibold">EXPLORER</div>
-      <div class="p-2 text-sm space-y-2">
-        <div class="font-semibold flex items-center gap-2">
-          <i class="bi bi-chevron-down text-xs"></i> <span>PORTFOLIO</span>
-        </div>
-        <div class="pl-6 space-y-1">
-          <a href="index.html" class="flex items-center gap-2 text-[#cbcb41] hover:text-[#00c6ff]">
-            <i class="bi bi-file-earmark-text"></i> README.md
-          </a>
-          <a href="about.html" class="flex items-center gap-2 text-[#e37933]">
-            <i class="bi bi-file-earmark-code"></i> About.html
-          </a>
-          <a href="skills.html" class="flex items-center gap-2 text-[#e37933] hover:text-[#00c6ff]">
-            <i class="bi bi-file-earmark-code"></i> Skills.html
-          </a>
-          <a href="educations.html" class="flex items-center gap-2 text-[#e37933] hover:text-[#00c6ff]">
-            <i class="bi bi-file-earmark-code"></i> Educations.html
-          </a>
-          <a href="experiences.html" class="flex items-center gap-2 text-[#e37933] hover:text-[#00c6ff]">
-            <i class="bi bi-file-earmark-code"></i> Experiences.html
-          </a>
-          <a href="projects.html" class="flex items-center gap-2 text-[#e37933] hover:text-[#00c6ff]">
-            <i class="bi bi-file-earmark-code"></i> Projects.html
-          </a>
-          <a href="certificats.html" class="flex items-center gap-2 text-[#e37933] hover:text-[#00c6ff]">
-            <i class="bi bi-file-earmark-code"></i> Certificats.html
-          </a>
-          <a href="contact.html" class="flex items-center gap-2 text-[#e37933] hover:text-[#00c6ff]">
-            <i class="bi bi-file-earmark-code"></i> Contact.html
-          </a>
+    <!-- Explorateur de fichiers -->
+    <div id="explorer-panel" class="bg-[#111111] w-64 border-r border-[#3e3e3e] overflow-auto">
+      <div class="p-4 border-b border-[#3e3e3e]">
+        <h3 class="text-sm font-semibold">EXPLORATEUR</h3>
+      </div>
+
+      <div class="p-2 text-sm">
+        <div class="folder">
+          <div class="folder-header flex items-center cursor-pointer">
+            <i class="fas fa-chevron-down mr-1 text-xs"></i>
+            <i class="fas fa-folder text-[#dcb67a] mr-2"></i>
+            <span>Mon_Portfolio</span>
+          </div>
+
+          <div class="folder-content ml-4 mt-1">
+            <!-- Dossier scripts -->
+            <div class="folder">
+              <div class="folder-header flex items-center cursor-pointer">
+                <i class="fas fa-chevron-down mr-1 text-xs"></i>
+                <i class="fas fa-folder text-[#dcb67a] mr-2"></i>
+                <span>scripts</span>
+              </div>
+              <div class="folder-content ml-4 mt-1">
+                <a href="contact.html">
+                  <div class="file hover:text-[#00c6ff] bg-[#333333]" data-file="scripts/script.js">
+                    <i class="fab fa-js text-yellow-400 mr-2"></i>contact.js
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Dossier styles -->
+            <div class="folder mt-2">
+              <div class="folder-header flex items-center cursor-pointer">
+                <i class="fas fa-chevron-down mr-1 text-xs"></i>
+                <i class="fas fa-folder text-[#dcb67a] mr-2"></i>
+                <span>styles</span>
+              </div>
+              <div class="folder-content ml-4 mt-1">
+                <a href="https://bouchramilo.github.io/CV/CV_Intelligence-Artificielle.html"><div class="file hover:text-[#00c6ff]" data-file="styles/style.css">
+                  <i class="fab fa-css3-alt text-blue-400 mr-2"></i>CV-IA.css
+                </div></a>
+                <a href="https://bouchramilo.github.io/CV/CV_Full-Stack.html"><div class="file hover:text-[#00c6ff]" data-file="styles/theme.css">
+                  <i class="fab fa-css3-alt text-blue-400 mr-2"></i>CV-Full-Stack.css
+                </div></a>
+              </div>
+            </div>
+
+            <!-- Fichiers principaux -->
+            <div class="mt-2 space-y-1">
+              <a href="about.html">
+                <div class="file hover:text-[#00c6ff]" data-file="about.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>about.html</div>
+              </a>
+              <a href="certificats.html">
+                <div class="file hover:text-[#00c6ff]" data-file="certificats.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>certificats.html</div>
+              </a>
+              <!-- <a href="contact.html">
+                <div class="file hover:text-[#00c6ff] bg-[#333333]" data-file="contact.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>contact.html</div>
+              </a> -->
+              <a href="experiences.html">
+                <div class="file hover:text-[#00c6ff]" data-file="experiences.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>experiences.html</div>
+              </a>
+              <a href="educations.html">
+                <div class="file hover:text-[#00c6ff]" data-file="formations.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>formations.html</div>
+              </a>
+              <a href="projects.html">
+                <div class="file hover:text-[#00c6ff]" data-file="projets.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>projets.html</div>
+              </a>
+              <a href="index.html">
+                <div class="file hover:text-[#00c6ff]" data-file="README.md"><i
+                    class="fas fa-file-alt text-gray-400 mr-2"></i>README.md</div>
+              </a>
+              <a href="skills.html">
+                <div class="file hover:text-[#00c6ff]" data-file="skills.html"><i
+                    class="fab fa-html5 text-orange-400 mr-2"></i>skills.html</div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Zone d’édition principale -->
-    <div class="ml-[300px] flex-1 bg-[var(--editor-bg)] flex flex-col overflow-hidden">
-      <!-- Onglet -->
-      <div class="bg-[#252526] border-b border-[#1e1e1e] flex items-center text-sm px-4 py-2">
-        <i class="bi bi-file-earmark-code text-[#e37933] mr-2"></i>
-        <span>README.md</span>
+    <!-- Zone d'édition -->
+    <div class="flex-1 flex flex-col">
+      <div class="bg-[#111111] border-b border-[#212121] flex items-center">
+        <div class="tab active hover:bg-[#1E1E1E] pl-4 pr-2 py-2 flex items-center text-sm bg-[#212121]">
+          <i class="fab fa-js text-yellow-400 mr-2"></i>
+          <span>contact.js</span>
+          <button class="hover:bg-[#3E3E3E] ml-2 w-5 rounded-md">×</button>
+        </div>
       </div>
 
-      <!-- Contenu -->
-      <div class="p-8 overflow-y-auto">
-        <!-- Section “About Me” -->
-        <div class="bg-[#2d2d2d] p-8 rounded-lg shadow-md fade-in">
-          <h1 class="text-3xl font-bold mb-4 text-[#00c6ff]">👩‍💻 Samar Miloudy</h1>
-          <p class="text-lg text-[#dcdcaa] mb-6">
-            Développeuse Full Stack & Intelligence Artificielle — passionnée par la création de solutions
-            intelligentes et élégantes alliant data science, IA et développement web moderne.
-          </p>
+      <div id="editor-container" class="flex-1 overflow-auto p-6">
+        <!-- Section Contact en style JavaScript -->
+        <section class="text-gray-200 min-h-screen pb-40">
+          <div class="max-w-4xl mx-auto">
+            <p class="text-xl font-bold mb-8 text-start text-yellow-400">#📞 Contact</p>
 
-          <div class="space-y-4">
-            <p>
-              🌍 <span class="text-[#ce9178]">Localisation :</span> Maroc
-            </p>
-            <p>
-              🧠 <span class="text-[#ce9178]">Compétences clés :</span> Python, React, Tailwind, FastAPI, TensorFlow
-            </p>
-            <p>
-              💬 <span class="text-[#ce9178]">Langages :</span> Français, Anglais, Arabe
-            </p>
-          </div>
+            <!-- Code JavaScript stylisé -->
+            <div class="bg-[#1E1E1E] rounded-lg p-6 border border-[#3e3e3e] overflow-x-auto mb-8">
+              <pre class="text-sm leading-7">
+<span class="text-[#569CD6]">class</span> <span class="text-[#4EC9B0]">Contact</span> {
+    <span class="text-[#569CD6]">constructor</span>() {
+        <span class="text-[#9CDCFE]">this</span>.personalInfo = {
+            <span class="text-[#9CDCFE]">firstName</span>: <span class="text-[#CE9178]">"Bouchra"</span>,
+            <span class="text-[#9CDCFE]">lastName</span>: <span class="text-[#CE9178]">"MILOUDY"</span>,
+            <span class="text-[#9CDCFE]">email</span>: <span class="text-[#CE9178]">"miloudybouchra01@gmial.com"</span>,
+            <span class="text-[#9CDCFE]">availability</span>: <span class="text-[#CE9178]">"Disponible pour de nouvelles opportunités"</span>
+        };
 
-          <div class="mt-6 flex gap-4">
-            <a href="https://github.com" target="_blank"
-              class="px-5 py-2 rounded-lg bg-[#1e1e1e] border border-[#333] hover:border-[#00c6ff] flex items-center gap-2">
-              <i class="bi bi-github"></i> GitHub
-            </a>
-            <a href="https://linkedin.com" target="_blank"
-              class="px-5 py-2 rounded-lg bg-[#1e1e1e] border border-[#333] hover:border-[#00c6ff] flex items-center gap-2">
-              <i class="bi bi-linkedin"></i> LinkedIn
-            </a>
-            <a href="mailto:samar@example.com"
-              class="px-5 py-2 rounded-lg bg-[#1e1e1e] border border-[#333] hover:border-[#00c6ff] flex items-center gap-2">
-              <i class="bi bi-envelope"></i> Email
-            </a>
+        <span class="text-[#9CDCFE]">this</span>.socialNetworks = {
+            <span class="text-[#9CDCFE]">linkedin</span>: {
+                <span class="text-[#9CDCFE]">username</span>: <span class="text-[#CE9178]">"Bouchra MILOUDY"</span>,
+                <span class="text-[#9CDCFE]">url</span>: <span class="text-[#CE9178]"><a class="hover:underline" href="https://www.linkedin.com/in/bouchra-miloudy-197824329/">"https://www.linkedin.com/in/bouchra-miloudy-197824329/"</a></span>,
+                <span class="text-[#9CDCFE]">icon</span>: <span class="text-[#CE9178]">"💼"</span>
+            },
+            <span class="text-[#9CDCFE]">github</span>: {
+                <span class="text-[#9CDCFE]">username</span>: <span class="text-[#CE9178]">"bouchramilo"</span>,
+                <span class="text-[#9CDCFE]">url</span>: <span class="text-[#CE9178]"><a class="hover:underline" href="https://github.com/bouchramilo">"https://github.com/bouchramilo"</a></span>,
+                <span class="text-[#9CDCFE]">icon</span>: <span class="text-[#CE9178]">"🐙"</span>
+            },
+            <span class="text-[#9CDCFE]">twitter</span>: {
+                <span class="text-[#9CDCFE]">username</span>: <span class="text-[#CE9178]">"@BouchraMil2713"</span>,
+                <span class="text-[#9CDCFE]">url</span>: <span class="text-[#CE9178]"><a class="hover:underline" href="https://x.com/BouchraMil2713">"https://x.com/BouchraMil2713"</a></span>,
+                <span class="text-[#9CDCFE]">icon</span>: <span class="text-[#CE9178]">"🐦"</span>
+            }
+        };
+
+        <span class="text-[#9CDCFE]">this</span>.resumes = {
+            <span class="text-[#9CDCFE]">ai</span>: {
+                <span class="text-[#9CDCFE]">title</span>: <span class="text-[#CE9178]">"CV_AI_Developer.pdf"</span>,
+                <span class="text-[#9CDCFE]">url</span>: <span class="text-[#CE9178]">"/cv/cv-ai-developer.pdf"</span>,
+                <span class="text-[#9CDCFE]">description</span>: <span class="text-[#CE9178]">"Développeuse en Intelligence Artificielle"</span>
+            },
+            <span class="text-[#9CDCFE]">fullstack</span>: {
+                <span class="text-[#9CDCFE]">title</span>: <span class="text-[#CE9178]">"CV_FullStack_Developer.pdf"</span>,
+                <span class="text-[#9CDCFE]">url</span>: <span class="text-[#CE9178]">"/cv/cv-fullstack-developer.pdf"</span>,
+                <span class="text-[#9CDCFE]">description</span>: <span class="text-[#CE9178]">"Développeuse Full Stack"</span>
+            }
+        };
+    }
+
+    <span class="text-[#DCDCAA]">sendMessage</span>(<span class="text-[#9CDCFE]">message</span>) {
+        <span class="text-[#569CD6]">return</span> <span class="text-[#569CD6]">new</span> <span class="text-[#4EC9B0]">Promise</span>((<span class="text-[#9CDCFE]">resolve</span>) => {
+            <span class="text-[#DCDCAA]">console</span>.<span class="text-[#DCDCAA]">log</span>(<span class="text-[#CE9178]">`📨 Message envoyé: </span><span class="text-[#569CD6]">${</span>message<span class="text-[#569CD6]">}</span><span class="text-[#CE9178]">`</span>);
+            <span class="text-[#DCDCAA]">setTimeout</span>(() => {
+                <span class="text-[#DCDCAA]">resolve</span>(<span class="text-[#CE9178]">"✅ Message reçu avec succès!"</span>);
+            }, <span class="text-[#B5CEA8]">1000</span>);
+        });
+    }
+
+    <span class="text-[#DCDCAA]">downloadResume</span>(<span class="text-[#9CDCFE]">type</span>) {
+        <span class="text-[#569CD6]">const</span> resume = <span class="text-[#9CDCFE]">this</span>.resumes[type];
+        <span class="text-[#569CD6]">if</span> (resume) {
+            <span class="text-[#DCDCAA]">console</span>.<span class="text-[#DCDCAA]">log</span>(<span class="text-[#CE9178]">`📄 Téléchargement: </span><span class="text-[#569CD6]">${</span>resume.title<span class="text-[#569CD6]">}</span><span class="text-[#CE9178]">`</span>);
+            <span class="text-gray-500">// window.location.href = resume.url;</span>
+            <span class="text-[#569CD6]">return</span> <span class="text-[#CE9178]">"📥 Téléchargement démarré"</span>;
+        }
+        <span class="text-[#569CD6]">throw new</span> <span class="text-[#4EC9B0]">Error</span>(<span class="text-[#CE9178]">"Type de CV non trouvé"</span>);
+    }
+}
+
+<span class="text-gray-500">// Instance de contact</span>
+<span class="text-[#569CD6]">const</span> <span class="text-[#9CDCFE]">myContact</span> = <span class="text-[#569CD6]">new</span> <span class="text-[#4EC9B0]">Contact</span>();
+<span class="text-[#DCDCAA]">console</span>.<span class="text-[#DCDCAA]">log</span>(<span class="text-[#CE9178]">"👋 Contact initialisé avec succès!"</span>);</pre>
+            </div>
+
+            <!-- Cartes d'information interactives -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <!-- Informations personnelles -->
+              <div class="bg-[#1E1E1E] rounded-lg p-6 border border-[#3e3e3e]">
+                <h3 class="text-lg font-semibold text-yellow-400 mb-4 flex items-center">
+                  <i class="fas fa-user mr-2"></i>
+                  Informations Personnelles
+                </h3>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-gray-400">Nom complet:</span>
+                    <span class="text-white font-semibold">Bouchra MILOUDY</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-gray-400">Email:</span>
+                    <a href="mailto:votre.email@domain.com" class="text-[#00c6ff] hover:underline">
+                      miloudybouchra01@gmail.com
+                    </a>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-gray-400">Statut:</span>
+                    <span class="text-green-400 text-sm">🟢 Disponible</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Réseaux sociaux -->
+              <div class="bg-[#1E1E1E] rounded-lg p-6 border border-[#3e3e3e]">
+                <h3 class="text-lg font-semibold text-yellow-400 mb-4 flex items-center">
+                  <i class="fas fa-share-alt mr-2"></i>
+                  Réseaux Sociaux
+                </h3>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <i class="fab fa-linkedin text-blue-400 mr-2"></i>
+                      <span class="text-gray-400">LinkedIn:</span>
+                    </div>
+                    <a href="https://www.linkedin.com/in/bouchra-miloudy-197824329/"
+                      class="text-[#00c6ff] hover:underline text-sm">
+                      Bouchra MILOUDY
+                    </a>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <i class="fab fa-github text-gray-400 mr-2"></i>
+                      <span class="text-gray-400">GitHub:</span>
+                    </div>
+                    <a href="https://github.com/bouchramilo" class="text-[#00c6ff] hover:underline text-sm">
+                      bouchramilo
+                    </a>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <i class="fab fa-twitter text-blue-300 mr-2"></i>
+                      <span class="text-gray-400">Twitter/X:</span>
+                    </div>
+                    <a href="https://x.com/BouchraMil2713" class="text-[#00c6ff] hover:underline text-sm">
+                      @BouchraMil2713
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section CV -->
+            <!-- Ajoutez cette section dans votre page contact -->
+            <div class="bg-[#1E1E1E] rounded-lg p-6 border border-[#3e3e3e]">
+              <h3 class="text-lg font-semibold text-yellow-400 mb-4 flex items-center">
+                <i class="fas fa-file-download mr-2"></i>
+                Télécharger mon CV
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- CV IA -->
+                <div class="bg-[#252526] rounded p-4 border border-[#3e3e3e] hover:border-[#00c6ff] transition-all">
+                  <div class="flex items-center justify-between mb-2">
+                    <h4 class="text-white font-semibold">CV IA Developer</h4>
+                    <span class="bg-purple-500 text-white px-2 py-1 rounded text-xs">AI</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">Développeuse en Intelligence Artificielle</p>
+                  <div class="flex space-x-2">
+                    <button onclick="viewCV('ai')"
+                      class="flex-1 bg-[#2D2D30] text-gray-300 hover:bg-[#3E3E42] py-2 rounded text-sm transition-colors">
+                      <i class="fas fa-eye mr-2"></i>
+                      Voir
+                    </button>
+                    <button onclick="downloadCVasPDF('ai')"
+                      class="flex-1 bg-[#0E2A47] text-[#00c6ff] hover:bg-[#1a3a5a] py-2 rounded text-sm transition-colors">
+                      <i class="fas fa-download mr-2"></i>
+                      PDF
+                    </button>
+                  </div>
+                </div>
+
+                <!-- CV Full Stack -->
+                <div class="bg-[#252526] rounded p-4 border border-[#3e3e3e] hover:border-[#00c6ff] transition-all">
+                  <div class="flex items-center justify-between mb-2">
+                    <h4 class="text-white font-semibold">CV Full Stack</h4>
+                    <span class="bg-green-500 text-white px-2 py-1 rounded text-xs">Full Stack</span>
+                  </div>
+                  <p class="text-gray-400 text-sm mb-3">Développeuse Full Stack</p>
+                  <div class="flex space-x-2">
+                    <button onclick="viewCV('fullstack')"
+                      class="flex-1 bg-[#2D2D30] text-gray-300 hover:bg-[#3E3E42] py-2 rounded text-sm transition-colors">
+                      <i class="fas fa-eye mr-2"></i>
+                      Voir
+                    </button>
+                    <button onclick="downloadCVasPDF('fullstack')"
+                      class="flex-1 bg-[#0E2A47] text-[#00c6ff] hover:bg-[#1a3a5a] py-2 rounded text-sm transition-colors">
+                      <i class="fas fa-download mr-2"></i>
+                      PDF
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </div>
-        </div>
+        </section>
       </div>
 
       <!-- Barre de statut -->
@@ -191,6 +377,51 @@
       </div>
     </div>
   </div>
+  <script>
+    // URLs de vos pages GitHub Pages
+    const cvUrls = {
+      ai: "https://bouchramilo.github.io/CV/CV_Intelligence-Artificielle.html",
+      fullstack: "https://bouchramilo.github.io/CV/CV_Full-Stack.html"
+    };
+
+    // Fonction pour visualiser le CV
+    function viewCV(type) {
+      window.open(cvUrls[type], '_blank');
+    }
+
+    function downloadCVasPDF(type) {
+      const cvName = type === 'ai' ? 'IA Developer' : 'Full Stack Developer';
+
+      const message = `
+📄 Téléchargement du CV ${cvName}
+
+Instructions :
+1. Le CV va s'ouvrir dans un nouvel onglet
+2. Appuyez sur Ctrl+P (Windows) ou Cmd+P (Mac)
+3. Dans la destination, choisissez "Enregistrer au format PDF"
+4. Cliquez sur "Enregistrer"
+
+✅ Votre CV sera téléchargé en format PDF !
+    `;
+
+      alert(message);
+
+      // Ouvrir le CV dans un nouvel onglet
+      const newWindow = window.open(cvUrls[type], '_blank');
+
+      // Optionnel: Auto-impression après chargement
+      if (newWindow) {
+        newWindow.onload = function () {
+          // Laisser l'utilisateur déclencher manuellement l'impression
+          // newWindow.print(); // Décommentez pour auto-impression
+        };
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script src="scripts/theme-toggle.js"></script>
+  <script src="scripts/script.js"></script>
 </body>
 
 </html>
